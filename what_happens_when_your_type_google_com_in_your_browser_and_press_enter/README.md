@@ -1,0 +1,42 @@
+# What Happens When You Type `https://www.google.com` in Your Browser and Press Enter?
+
+## Diagram of the Request Flow
+
+```mermaid
+flowchart TD
+    A[User types Google URL in browser] --> B[DNS resolution]
+    B --> C[Browser gets server IP address]
+    C --> D[Request sent to server IP on port 443]
+    D --> E[HTTPS TLS encrypted traffic]
+    E --> F[Firewall]
+    F --> G[Load balancer]
+    G --> H[Web server]
+    H --> I[Application server]
+    I --> J[Database]
+    J --> I
+    I --> H
+    H --> K[Web page returned to browser]
+```
+
+## Explanation of the Diagram
+
+The user enters `https://www.google.com` in the browser.
+
+First, the browser performs a **DNS resolution** to find the IP address of the server.
+
+Once the IP is found, the browser sends a request to that server using **port 443**, which is the standard port for **HTTPS**.
+
+Because the connection uses HTTPS, the traffic is **encrypted with SSL/TLS**.
+
+The request then passes through a **firewall**, which filters and protects network traffic.
+
+After that, the request reaches a **load balancer**, which distributes traffic across available servers.
+
+The load balancer forwards the request to a **web server**.
+
+If the requested content is dynamic, the web server communicates with the **application server**, which handles the business logic.
+
+The application server may need information from the **database**, so it sends a request to the database and gets data back.
+
+Finally, the application server generates the page, the web server serves it, and the browser displays the web page to the user.
+
