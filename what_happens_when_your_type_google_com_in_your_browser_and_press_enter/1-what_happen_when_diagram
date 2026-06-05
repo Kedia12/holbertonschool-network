@@ -19,7 +19,7 @@ flowchart TD
 
 ## What this diagram shows
 
-```md
+
 ## Explanation of the Diagram
 
 The user enters `https://www.google.com` in the browser.  
@@ -36,4 +36,3 @@ If the requested content is dynamic, the web server communicates with the **appl
 The application server may need information from the **database**, so it sends a request to the database and gets data back.  
 
 Finally, the application server generates the page, the web server serves it, and the browser displays the web page to the user.
-```
